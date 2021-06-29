@@ -1,0 +1,56 @@
+
+
+POST http://localhost:3000/user/register HTTP/1.1
+content-type: application/json
+
+{ 
+	"email": "admin@admin.com",
+	"password": "admin",
+	"role": "ADMIN",
+	"username": "admin"
+}
+###
+POST http://localhost:3000/user/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@admin.com",
+    "password": "admin"
+}
+###
+POST http://localhost:3000/user/register HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user@user.com",
+    "password": "user",
+    "role":"USER",
+    "username":"newUser"
+}
+###
+GET http://localhost:3000/user/ HTTP/1.1
+content-type: application/json
+###
+POST http://localhost:3000/article/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Hallo liebe Mitglieder, ich habe eine Frage...",
+    "description": "Meine erste Frage",
+    "author":"5fd35b33f7e94c16882c424c"
+}
+###
+GET http://localhost:3000/article/ HTTP/1.1
+content-type: application/json
+###
+POST http://localhost:3000/comment/usercomment/ HTTP/1.1
+content-type: application/json
+
+{
+    "message": "Hallo, ich habe die selbe Frage..",
+    "article": "5fd4b36dfff1c21efbcce592",
+    "author": "5fd35b33f7e94c16882c424c"
+}
+###
+GET http://localhost:3000/comment/ HTTP/1.1
+content-type: application/json
